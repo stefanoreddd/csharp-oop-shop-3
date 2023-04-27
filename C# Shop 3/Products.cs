@@ -34,6 +34,12 @@ namespace C__Shop_3
 
         //GETTERS
 
+
+        public static int GetNumberOfGeneratedProducts()
+        {
+            return numberOfGeneratedProducts;
+        }
+
         public string GetProductName()
         {
             return this.productName;
@@ -77,7 +83,7 @@ namespace C__Shop_3
 
         //METODI
 
-        public string ProductInfoList()
+        public override string ToString()
         {
             string productInfo = "Nome Prodotto: " + this.productName + "\n";
             productInfo += "Categoria: " + this.productCategory + "\n";
