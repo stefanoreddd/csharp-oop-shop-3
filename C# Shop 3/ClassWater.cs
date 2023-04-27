@@ -126,13 +126,12 @@ namespace C__Shop_3
             litriFinali = litri;
         }
 
-        public double Svuota()
+        public void Svuota()
         {
             Console.WriteLine("*Svuota la bottiglia*");
             Thread.Sleep(5000);
             this.litri = 0;
             Console.WriteLine("Bottiglia vuota!");
-            return this.litri;
         }
     }
 }
