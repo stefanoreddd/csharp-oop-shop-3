@@ -29,6 +29,8 @@ namespace C__Shop_3
             this.productDescription = productDescription;
             this.productPrice = productPrice;
 
+
+            numberOfGeneratedProducts++;
         }
 
 
