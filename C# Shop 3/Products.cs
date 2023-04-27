@@ -87,10 +87,10 @@ namespace C__Shop_3
 
         public override string ToString()
         {
-            string productInfo = "Nome Prodotto: " + this.productName + "\n";
-            productInfo += "Categoria: " + this.productCategory + "\n";
-            productInfo += "Descrizione: " + this.productDescription + "\n";
-            productInfo += "Prezzo: " + this.productPrice + " euro" + "\n";
+            string productInfo = "\t" + "Nome Prodotto: " + this.productName + "\n";
+            productInfo += "\t" + "Categoria: " + this.productCategory + "\n";
+            productInfo += "\t" + "Descrizione: " + this.productDescription + "\n";
+            productInfo += "\t" + "Prezzo: " + this.productPrice + " euro" + "\n";
 
 
             return productInfo;

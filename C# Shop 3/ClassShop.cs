@@ -109,11 +109,13 @@ namespace C__Shop_3
 
         }
 
-        public string ShopInfoList()
+        public override string ToString()
         {
             string shopInfoList = "Nome negozio: " + this.name + "\n";
             shopInfoList += "Indirizzo: " + this.address + ", " + this.number + "\n";
             shopInfoList += "Città: " + this.city + ", " + this.country + "\n";
+            shopInfoList += "Proprietario: " + this.owner + "\n";
+            shopInfoList += "------ LISTA PRODOTTI ------" + "\n";
 
             foreach (Products infoProduct in prodotti)
             {
