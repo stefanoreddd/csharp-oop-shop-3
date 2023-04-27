@@ -91,7 +91,7 @@ namespace C__Shop_3
 
             if (this.litri == 0)
             {
-                throw new Exception("L'acuqa è finita!");
+                throw new Exception("L'acqua è finita!");
             }
 
             return this.litri;           
@@ -106,6 +106,7 @@ namespace C__Shop_3
             Console.WriteLine("*Riempie la bottiglia*");
             float litriFinali = this.litri + litriDaRiempire;
             Thread.Sleep(5000);
+
             if (litriFinali > this.litri)
             {
                 throw new Exception("Non puoi riempire la bottiglia oltre la capienza massima!");
@@ -123,8 +124,8 @@ namespace C__Shop_3
         {
             Console.WriteLine("*Svuota la bottiglia*");
             Thread.Sleep(5000);
-            Console.WriteLine("Bottiglia vuota!");
             this.litri = 0;
+            Console.WriteLine("Bottiglia vuota!");
             return this.litri;
         }
     }
