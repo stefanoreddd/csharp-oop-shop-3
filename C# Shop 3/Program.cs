@@ -7,7 +7,7 @@ Console.OutputEncoding = System.Text.Encoding.Unicode; // Per inserire i caratte
 Shop negozioMilano = new Shop("Negozio Milano", "Milano", "Italia", "Via Aldo Rossi", 8, "Jerry Cardinale");
 
 
-Water acquaLilia = new Water("Bottiglietta d'acqua Lilia", "Bevande", "Bottiglietta d'acqua da 0,5L naturale", 1, 0.5d, 7, "Rubinetto", "Lilia", "Naturale", "Plastica");
+Water acquaLilia = new Water("Bottiglia d'acqua Lilia", "Bevande", "Bottiglietta d'acqua da 0,5L naturale", 1, 2d, 7, "Rubinetto", "Lilia", "Naturale", "Plastica");
 
 List<Products> prodottiNegozioMilano = new List<Products> { acquaLilia };
 
@@ -21,7 +21,7 @@ Console.WriteLine(negozioMilano.ToString());
 
 try
 {
-    acquaLilia.Bevi();
+    acquaLilia.Bevi(0.5d);
 }
 catch (Exception e)
 {
@@ -34,12 +34,12 @@ Console.WriteLine();
 
 try
 {
-    acquaLilia.Riempi();
+    acquaLilia.Riempi(2d);
 }
 catch (Exception e)
 {
     Console.WriteLine(e.Message);
-    acquaLilia.SetLitri(0.5d);
+    acquaLilia.SetLitri(2d);
 }
 
 Console.WriteLine();
@@ -54,6 +54,8 @@ catch (Exception e)
 {
     Console.WriteLine(e.Message);
 }
+
+
 
 
 

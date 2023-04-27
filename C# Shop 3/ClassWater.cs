@@ -86,29 +86,30 @@ namespace C__Shop_3
 
         // METODI
 
-        public double Bevi()
+        public void Bevi(double litriDaBere)
         {
-            double litriDaBere = 0.5d;
             Console.WriteLine("Bevo la bottiglia...");
-            this.litri = litri - litriDaBere;
             Thread.Sleep(5000);
 
-            if (this.litri == 0)
+            if (litriDaBere == this.litri)
             {
+                this.litri = 0;
                 throw new Exception("L'acqua è finita!");
+                
             }
-
-            Console.WriteLine("Numero litri dopo aver bevuto: " + this.litri);
-
-            return this.litri;           
+            else if (litriDaBere > this.litri)
+            {
+                throw new Exception("Non puoi bere più acqua di quanta ce ne sia nella bottiglia!");
+            }
+            else
+            {
+                litri = this.litri - litriDaBere;
+            }
         }
 
-        public double Riempi()
+        public void Riempi(double litriDaRiempire)
         {
-            double litriDaRiempire = 0;
-
-            Console.WriteLine("Di quanti litri vuoi riempire?");
-            litriDaRiempire = float.Parse(Console.ReadLine());
+           
             Console.WriteLine("*Riempie la bottiglia*");
             double litriFinali = this.litri + litriDaRiempire;
             Thread.Sleep(5000);
@@ -122,9 +123,7 @@ namespace C__Shop_3
                 Console.WriteLine("Bottiglia riempita!");
             }
 
-                      
-
-            return this.litri;
+            litriFinali = litri;
         }
 
         public double Svuota()
