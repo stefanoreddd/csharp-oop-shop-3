@@ -25,6 +25,12 @@ namespace C__Shop_3
         {
             this.litri = litri;
             this.ph = ph;
+
+            if (this.ph < 0 || this.ph > 10)
+            {
+                throw new ArgumentException("Non puoi creare una bottiglia d'acqua con un ph negativo o superiore a 10!");
+            }
+
             this.sorgente = sorgente;
             this.marca = marca;
             this.tipo = tipo; // (Minerale, Frizzante...)
@@ -66,6 +72,13 @@ namespace C__Shop_3
         }
 
 
+        //SETTERS
+
+        public void SetPh(int ph)
+        {
+            this.ph = ph;
+        }
+
         // METODI
 
         public float Bevi()
@@ -75,7 +88,13 @@ namespace C__Shop_3
             this.litri = litri - litriDaBere;
             Thread.Sleep(5000);
             Console.WriteLine("Numero litri dopo aver bevuto: " + this.litri);
-            return this.litri;
+
+            if (this.litri == 0)
+            {
+                throw new Exception("L'acuqa è finita!");
+            }
+
+            return this.litri;           
         }
 
         public float Riempi()
@@ -89,7 +108,7 @@ namespace C__Shop_3
             Thread.Sleep(5000);
             if (litriFinali > this.litri)
             {
-                Console.WriteLine("Hai versato tutto fuori!");
+                throw new Exception("Non puoi riempire la bottiglia oltre la capienza massima!");
             }
             else if (litriFinali == this.litri)
             {
